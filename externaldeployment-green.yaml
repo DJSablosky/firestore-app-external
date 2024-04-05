@@ -1,20 +1,20 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: demo-ui
+  name: demo-ui-green
 spec: 
   selector:
     matchLabels:
-      app: demo-ui
+      app: demo-ui-green
   replicas: 2 # tells deployment to run 1 pod matching the template
   template:
     metadata:
       labels:
-        app: demo-ui
+        app: demo-ui-green
     spec:
       containers:
       - name: demo-ui
-        image: us-east1-docker.pkg.dev/roigcp-240403-user405/sample-firestore/external
+        image: us-east1-docker.pkg.dev/roigcp-240403-user405/sample-firestore/external:g1.0
         env: 
         - name: SERVER
           value: "http://demo-service.production:8082"
